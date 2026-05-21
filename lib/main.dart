@@ -5,6 +5,7 @@ import '../screens/general_category.dart';
 import '../screens/qr_screen.dart';
 import '../screens/sign_up.dart';
 import '../screens/sign_in.dart';
+import '../screens/payment_Screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,14 +22,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: '/sign_in',
+      initialRoute: '/qr_screen',
 
       routes: {
         '/sign_in': (context) => const SignInScreen(),
         '/sign_up': (context) => const SignUpScreen(),
-        '/qr_screen': (context) => const QrScreen(),
+        '/qr_screen': (context) => QrScreen(),
         '/category': (context) => const CategoryScreen(),
         '/general_category': (context) => const GeneralCategoryScreen(),
+        '/payment_screen': (context) => PaymentScreen(
+          upiId: 'testmerchant@upi',
+          merchantName: 'Test Store',
+        ),
       },
     );
   }
