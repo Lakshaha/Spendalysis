@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: '/qr_screen',
+      initialRoute: '/sign_in',
 
       routes: {
         '/sign_in': (context) => const SignInScreen(),
