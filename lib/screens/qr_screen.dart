@@ -47,35 +47,11 @@ class _QrScreenState extends State<QrScreen> {
               }
             },
           ),
-          Align(
-            alignment: AlignmentGeometry.xy(0, 0.7),
-            child: Padding(
-              padding: EdgeInsetsGeometry.only(bottom: 40),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          PaymentScreen(upiId: upiID, merchantName: Merchant),
-                    ),
-                  );
-                },
-                child: Text(
-                  "Proceed to pay",
-                  style: TextStyle(fontSize: 20, color: Colors.black),
-                ),
-              ),
-            ),
-          ),
           if (isScanned)
             Align(
               alignment: Alignment(0, 0.8),
               child: Container(
                 alignment: Alignment(0, 0.8),
-                height: 200,
-                width: 400,
 
                 child: Container(
                   decoration: BoxDecoration(
@@ -92,6 +68,31 @@ class _QrScreenState extends State<QrScreen> {
                 ),
               ),
             ),
+
+          Align(
+            alignment: AlignmentGeometry.xy(0, 0.7),
+            child: Padding(
+              padding: EdgeInsetsGeometry.only(bottom: 40),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFB8AF93),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          PaymentScreen(upiId: upiID, merchantName: Merchant),
+                    ),
+                  );
+                },
+                child: Text(
+                  "Proceed to pay",
+                  style: TextStyle(fontSize: 20, color: Colors.black),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
